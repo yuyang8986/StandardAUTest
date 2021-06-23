@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StandardAUTest", "StandardA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StandardsAUTest.Application", "StandardsAUTest.Application\StandardsAUTest.Application.csproj", "{09BD1271-91B2-4894-B93F-0BDBDF834FE8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StandardsAUTest.Domain", "StandardsAUTest.Domain\StandardsAUTest.Domain.csproj", "{0B76997C-9619-4A9D-A65D-A773E226D8D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{09BD1271-91B2-4894-B93F-0BDBDF834FE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09BD1271-91B2-4894-B93F-0BDBDF834FE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09BD1271-91B2-4894-B93F-0BDBDF834FE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B76997C-9619-4A9D-A65D-A773E226D8D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B76997C-9619-4A9D-A65D-A773E226D8D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B76997C-9619-4A9D-A65D-A773E226D8D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B76997C-9619-4A9D-A65D-A773E226D8D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
