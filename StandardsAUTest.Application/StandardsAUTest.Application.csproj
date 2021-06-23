@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\StandardsAUTest.Domain\StandardsAUTest.Domain.csproj" />
+    <ProjectReference Include="..\StandardsAUTest.Infrastructure\StandardsAUTest.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

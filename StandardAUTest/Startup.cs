@@ -26,6 +26,8 @@ namespace StandardAUTest
 
             services.AddInfrastructure(Configuration);
 
+            services.AddCommonProjectDependencies(Configuration);
+
             services.AddMvc(setup =>
             {
             }).AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateCustomerViewModelValidator>());

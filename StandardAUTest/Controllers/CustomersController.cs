@@ -5,8 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
-using StandardsAUTest.Application.Models.Dtos;
 using StandardsAUTest.Domain.Entities;
+using StandardsAUTest.Domain.Entities.Dtos;
 using StandardsAUTest.Domain.Interfaces;
 
 namespace StandardAUTest.Controllers

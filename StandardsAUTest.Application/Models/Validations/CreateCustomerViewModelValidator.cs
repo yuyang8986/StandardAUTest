@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using StandardsAUTest.Application.Models.ViewModels;
+using StandardsAUTest.Domain.Entities.ViewModels;
 
 namespace StandardsAUTest.Application.Models.Validations
 {
