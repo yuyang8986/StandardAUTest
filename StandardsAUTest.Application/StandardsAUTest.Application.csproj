@@ -8,7 +8,10 @@
     <Folder Include="Models\Dtos\" />
     <Folder Include="Models\Validations\" />
     <Folder Include="Models\ViewModels\" />
-    <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StandardsAUTest.Domain\StandardsAUTest.Domain.csproj" />
   </ItemGroup>
 
 </Project>

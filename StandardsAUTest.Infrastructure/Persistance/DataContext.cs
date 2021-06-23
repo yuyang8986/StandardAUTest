@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Reflection;
+using Microsoft.EntityFrameworkCore;
 using StandardsAUTest.Domain.Entities;
 
 namespace StandardsAUTest.Infrastructure.Persistance
@@ -10,5 +11,12 @@ namespace StandardsAUTest.Infrastructure.Persistance
         }
 
         public DbSet<Customer> Customers { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+            base.OnModelCreating(builder);
+        }
     }
 }
