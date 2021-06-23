@@ -9,6 +9,6 @@ namespace StandardsAUTest.Domain.Interfaces
     {
         Task<IEnumerable<CustomerDto>> GetAllCustomers();
 
-        Task<CustomerDto> CreateCustomer(CreateCustomerViewModel createCustomerViewModel);
+        Task<int> CreateCustomer(CreateCustomerViewModel createCustomerViewModel);
     }
 }

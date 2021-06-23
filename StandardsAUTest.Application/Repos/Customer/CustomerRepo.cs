@@ -21,11 +21,11 @@ namespace StandardsAUTest.Application.Repos.Customer
             return await _dataContext.Customers.ToListAsync();
         }
 
-        public async Task<Domain.Entities.Customer> CreateCustomer(Domain.Entities.Customer customer)
+        public async Task<int> CreateCustomer(Domain.Entities.Customer customer)
         {
             _dataContext.Customers.Add(customer);
             await _dataContext.SaveChangesAsync();
-            return customer;
+            return customer.CustomerId;
         }
     }
 }

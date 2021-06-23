@@ -9,6 +9,6 @@ namespace StandardsAUTest.Domain.Interfaces
     {
         Task<IEnumerable<Domain.Entities.Customer>> GetAllCustomers();
 
-        Task<Customer> CreateCustomer(Domain.Entities.Customer customer);
+        Task<int> CreateCustomer(Domain.Entities.Customer customer);
     }
 }
