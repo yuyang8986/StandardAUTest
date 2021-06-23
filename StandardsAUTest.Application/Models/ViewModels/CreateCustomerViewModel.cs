@@ -1,9 +1,9 @@
 ﻿using System;
 using StandardsAUTest.Domain.Types;
 
-namespace StandardsAUTest.Application.Models.Dtos
+namespace StandardsAUTest.Application.Models.ViewModels
 {
-    public class CustomerDto
+    public class CreateCustomerViewModel
     {
         public string Name { get; set; }
         public int Age { get; set; }

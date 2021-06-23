@@ -1,3 +1,4 @@
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -5,6 +6,7 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using StandardsAUTest.Application.Models.Validations;
 
 namespace StandardAUTest
 {
@@ -23,6 +25,10 @@ namespace StandardAUTest
             services.AddControllersWithViews();
 
             services.AddInfrastructure(Configuration);
+
+            services.AddMvc(setup =>
+            {
+            }).AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateCustomerViewModelValidator>());
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
