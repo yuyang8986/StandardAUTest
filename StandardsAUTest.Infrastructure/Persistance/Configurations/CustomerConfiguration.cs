@@ -12,6 +12,7 @@ namespace StandardsAUTest.Infrastructure.Persistance.Configurations
         {
             var seeding = new Customer
             {
+                CustomerId = 1,
                 Age = 30,
                 MonthlyExpensesTotal = 100,
                 Occupation = Occupation.Author,
