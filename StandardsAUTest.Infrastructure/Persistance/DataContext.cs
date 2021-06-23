@@ -6,7 +6,7 @@ namespace StandardsAUTest.Infrastructure.Persistance
 {
     public class DataContext : DbContext, IDataContext
     {
-        public DataContext(DbContextOptions options)
+        public DataContext(DbContextOptions options) : base(options)
         {
         }
 
