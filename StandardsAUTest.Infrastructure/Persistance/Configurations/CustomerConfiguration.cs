@@ -15,7 +15,7 @@ namespace StandardsAUTest.Infrastructure.Persistance.Configurations
                 CustomerId = 1,
                 Age = 30,
                 MonthlyExpensesTotal = 100,
-                Occupation = Occupation.Author,
+                Occupation = "Author",
                 Name = "Test",
                 DateOfBirth = DateTime.Parse("2020-01-01"),
                 PostCode = "2000",

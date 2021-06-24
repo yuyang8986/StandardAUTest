@@ -28,6 +28,8 @@ namespace StandardAUTest
 
             services.AddCommonProjectDependencies(Configuration);
 
+            services.AddCors();
+
             services.AddMvc(setup =>
             {
             }).AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateCustomerViewModelValidator>());
@@ -52,6 +54,10 @@ namespace StandardAUTest
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            app.UseCors(
+                options => options.AllowAnyOrigin().AllowAnyMethod()
+            );
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

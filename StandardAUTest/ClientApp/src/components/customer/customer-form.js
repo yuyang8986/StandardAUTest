@@ -66,6 +66,7 @@ export default class CustomerForm extends React.Component {
       postCode: ''
     };
     this.updateValueHandler = this.updateValueHandler.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUpdateOccupation = this.handleUpdateOccupation.bind(this);
   }
 
@@ -80,13 +81,34 @@ export default class CustomerForm extends React.Component {
   }
 
   handleSubmit(event) {
+    debugger
     event.preventDefault();
     fetch(this.baseUrl, {
       method: 'post',
-      headers: { 'Content-Type': 'application/json' },
-      body: {
-        // "first_name": this.state.
-      }
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With",
+        'Content-Type': 'application/json'
+      },
+      body:
+        JSON.stringify(
+          {
+            name: this.state.name,
+            age: this.state.age,
+            dateOfBirth: this.state.dateOfBirth,
+            occupation: this.state.occupation,
+            sumOfValue: this.state.sumOfValue,
+            monthlyExpensesTotal: this.state.monthlyExpensesTotal,
+            state: this.state.state,
+            postCode: this.state.postCode
+          })
+    }).then(r => {
+      console.log(r);
+      alert(r);
+    }).catch(error => {
+      debugger
+      console.log(error);
     });
   };
 
@@ -134,7 +156,7 @@ export default class CustomerForm extends React.Component {
     return (
       <div>
         <h1>Create Customer</h1>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <p>Name:</p>
           <input type='text' name='name' required onChange={this.updateValueHandler}></input>
           <p>Age:</p>
@@ -157,6 +179,8 @@ export default class CustomerForm extends React.Component {
           <input type='text' name='postCode' onChange={this.updateValueHandler}></input>
 
           <p>Total Value: {this.state.sumOfValue * this.getFactor(this.state.occupation)}</p>
+
+          <button type='submit'>Submit Form</button>
         </form>
 
       </div>

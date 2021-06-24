@@ -8,7 +8,7 @@ namespace StandardsAUTest.Domain.Entities.ViewModels
         public string Name { get; set; }
         public int Age { get; set; }
         public DateTime DateOfBirth { get; set; }
-        public Occupation Occupation { get; set; }
+        public string Occupation { get; set; }
         public double SumOfValue { get; set; }
         public double MonthlyExpensesTotal { get; set; }
         public string State { get; set; }
