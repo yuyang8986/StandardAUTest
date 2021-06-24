@@ -50,7 +50,7 @@ var occupationRatings = [
 //   },
 // ]
 
-export default class CustomerForm extends Component {
+export default class CustomerForm extends React.Component {
   baseUrl = 'https://localhost:44347/customers';
   constructor(props) {
     super(props);
@@ -59,28 +59,24 @@ export default class CustomerForm extends Component {
       name: '',
       age: null,
       dateOfBirth: '',
-      occupation: {},
+      occupation: '',
       sumOfValue: 0,
       monthlyExpensesTotal: 0,
       state: '',
       postCode: ''
     };
     this.updateValueHandler = this.updateValueHandler.bind(this);
+    this.handleUpdateOccupation = this.handleUpdateOccupation.bind(this);
   }
 
   updateValueHandler = (event) => {
-    debugger
     let nam = event.target.name;
     let val = event.target.value;
     this.setState({ [nam]: val });
-    console.log(this.state);
-    console.log(this.state);
   }
 
   handleUpdateOccupation = (event) => {
-    debugger
     this.setState({ occupation: event.target.value });
-    console.log(this.state.occupation.rating)
   }
 
   handleSubmit(event) {
@@ -94,11 +90,32 @@ export default class CustomerForm extends Component {
     });
   };
 
+  // getRating(occupation) {
+  //   debugger
+  //   if (!occupation) return null;
+
+  //   switch (occupation.trim()) {
+  //     case 'Cleaner':
+  //       return 'Light Manual';
+  //     case 'Doctor':
+  //       return 'Professional';
+  //     case 'Author':
+  //       return 'White Collar';
+  //     case 'Farmer':
+  //       return 'Heavy Manual';
+  //     case 'Mechanic':
+  //       return 'Heavy Manual';
+  //     case 'Florist':
+  //       return 'Light Manual';
+  //     default:
+  //       return null;
+  //   }
+  // }
+
   getFactor(rating) {
-    debugger
     if (!rating) return 0;
 
-    switch (rating.trim()) {
+    switch (rating.replace(/\s/g, "")) {
       case 'Professional':
         return 1.1;
       case 'WhiteCollar':
@@ -124,10 +141,10 @@ export default class CustomerForm extends Component {
           <input type='number' name='age' required onChange={this.updateValueHandler}></input>
           <p>Date Of Birth:</p>
           <input type='date' name='dateOfBirth' required onChange={this.updateValueHandler}></input>
-
+          <p>Select Occupation</p>
           <p>
-            <select name="occupation" onChange={this.handleUpdateOccupation} value={this.state.occupation}>
-              {occupationRatings.map(o => <option value={o} key={o.name}>{o.name}</option>)}
+            <select name="occupation" onChange={this.handleUpdateOccupation} value={this.state.occupation.rating}>
+              {occupationRatings.map(o => <option value={o.rating} key={o.name}>{o.name}</option>)}
             </select>
           </p>
           <p>Sum Of Value:</p>
@@ -139,7 +156,7 @@ export default class CustomerForm extends Component {
           <p>Post code:</p>
           <input type='text' name='postCode' onChange={this.updateValueHandler}></input>
 
-          <p>Total Value: {this.getFactor(this.state.occupation.rating)}</p>
+          <p>Total Value: {this.state.sumOfValue * this.getFactor(this.state.occupation)}</p>
         </form>
 
       </div>
